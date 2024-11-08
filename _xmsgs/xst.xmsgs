@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="89" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 115: &lt;<arg fmt="%s" index="1">bufg</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/clock_generator.v" Line 130: Assignment to <arg fmt="%s" index="1">status_int</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 127: Formal port <arg fmt="%s" index="1">board_out_addr</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">board_out_addr</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 128: Formal port <arg fmt="%s" index="1">board_out_piece</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">board_out_piece</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 135: Formal port <arg fmt="%s" index="1">cursor_addr</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">cursor_addr</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 136: Formal port <arg fmt="%s" index="1">selected_addr</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">selected_addr</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 139: Formal port <arg fmt="%s" index="1">move_is_legal</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">move_is_legal</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="439" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 143: Formal port <arg fmt="%s" index="1">promotion_piece</arg> of mode <arg fmt="%s" index="2">buffer</arg> cannot be associated with actual port <arg fmt="%s" index="3">promotion_piece</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 78: Using initial value <arg fmt="%s" index="1">false</arg> for <arg fmt="%s" index="2">path_horizontal_clear</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 79: Using initial value <arg fmt="%s" index="1">false</arg> for <arg fmt="%s" index="2">path_vertical_clear</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 80: Using initial value <arg fmt="%s" index="1">false</arg> for <arg fmt="%s" index="2">path_diagonal_clear</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 220: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 230: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 122: Assignment to <arg fmt="%s" index="1">king_captured</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 402: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 420: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 425: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 483: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 484: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 485: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 490: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 491: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 492: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 493: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 501: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 502: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 503: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 508: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 509: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 510: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 511: <arg fmt="%s" index="1">board</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 73: Net &lt;<arg fmt="%s" index="1">h_delta[3]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 74: Net &lt;<arg fmt="%s" index="1">v_delta[3]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 316: <arg fmt="%s" index="1">reset</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd</arg>&quot; line <arg fmt="%s" index="2">194</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clk_gen_inst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">h_delta</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">v_delta</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">110</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">current_state</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">111</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">current_state</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_board_out_addr[5]_GND_10_o_wide_mux_73_OUT</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">chess_module</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">output_color_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">chess_display_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;output_color_4&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">R_debounce_inst/I_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">R_debounce_inst/I_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">R_debounce_inst/I_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">R_debounce_inst/I_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_debounce_inst/I_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_debounce_inst/I_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_debounce_inst/I_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_debounce_inst/I_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U_debounce_inst/I_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U_debounce_inst/I_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U_debounce_inst/I_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U_debounce_inst/I_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">L_debounce_inst/I_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">L_debounce_inst/I_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">L_debounce_inst/I_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">L_debounce_inst/I_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">chess_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+</messages>
+

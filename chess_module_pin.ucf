@@ -1,0 +1,46 @@
+# Clock signal (20MHz from OSC pin P123)
+NET "ClkPort" LOC = P123 | IOSTANDARD = LVCMOS33;
+NET "ClkPort" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50 ns;  # 20MHz period
+
+# Add switch mappings
+NET "Sw0" LOC = P66 | IOSTANDARD = LVCMOS33;      # SW0 for promotion LSB
+NET "Sw1" LOC = P62 | IOSTANDARD = LVCMOS33;      # SW1 for promotion MSB
+NET "DIP8" LOC = P99 | IOSTANDARD = LVCMOS33;     # DIP8 for reset
+
+# Push Buttons with original mapping
+NET "BtnL" LOC = P47 | IOSTANDARD = LVCMOS33 | PULLUP; # PB3
+NET "BtnR" LOC = P48 | IOSTANDARD = LVCMOS33 | PULLUP;  # PB4
+NET "BtnU" LOC = P51;  # PB5
+NET "BtnD" LOC = P55;  # PB6
+NET "BtnC" LOC = P46;  # PB1
+# LEDs
+NET "Ld0" LOC = P82 | IOSTANDARD = LVCMOS33;      # L0
+NET "Ld1" LOC = P81 | IOSTANDARD = LVCMOS33;      # L1
+NET "Ld2" LOC = P80 | IOSTANDARD = LVCMOS33;      # L2
+NET "Ld3" LOC = P79 | IOSTANDARD = LVCMOS33;      # L3
+NET "Ld4" LOC = P78 | IOSTANDARD = LVCMOS33;      # L4
+
+# VGA Output using expansion port pins
+# K1 connector
+NET "vga_r0" LOC = P5 | IOSTANDARD = LVCMOS33;    
+NET "vga_r1" LOC = P7 | IOSTANDARD = LVCMOS33;    
+NET "vga_r2" LOC = P9 | IOSTANDARD = LVCMOS33;    
+
+# K2 connector
+NET "vga_g0" LOC = P6 | IOSTANDARD = LVCMOS33;    
+NET "vga_g1" LOC = P8 | IOSTANDARD = LVCMOS33;    
+NET "vga_g2" LOC = P10 | IOSTANDARD = LVCMOS33;   
+NET "vga_b0" LOC = P14 | IOSTANDARD = LVCMOS33;   
+NET "vga_b1" LOC = P15 | IOSTANDARD = LVCMOS33;   
+
+# VGA Sync signals
+NET "vga_hsync" LOC = P16 | IOSTANDARD = LVCMOS33;  
+NET "vga_vsync" LOC = P17 | IOSTANDARD = LVCMOS33;  
+
+# Add new LED mappings
+NET "Ld5" LOC = P74 | IOSTANDARD = LVCMOS33;  # L6
+NET "Ld6" LOC = P67 | IOSTANDARD = LVCMOS33;  # L7
+
+# Clock routing constraint
+PIN "clk_gen_inst/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;

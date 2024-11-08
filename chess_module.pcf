@@ -1,0 +1,47 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Nov 08 11:53:12 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "Ld0" LOCATE = SITE "P82" LEVEL 1;
+COMP "Ld1" LOCATE = SITE "P81" LEVEL 1;
+COMP "Ld2" LOCATE = SITE "P80" LEVEL 1;
+COMP "Ld3" LOCATE = SITE "P79" LEVEL 1;
+COMP "Ld4" LOCATE = SITE "P78" LEVEL 1;
+COMP "Ld5" LOCATE = SITE "P74" LEVEL 1;
+COMP "Ld6" LOCATE = SITE "P67" LEVEL 1;
+COMP "Sw0" LOCATE = SITE "P66" LEVEL 1;
+COMP "Sw1" LOCATE = SITE "P62" LEVEL 1;
+COMP "ClkPort" LOCATE = SITE "P123" LEVEL 1;
+COMP "DIP8" LOCATE = SITE "P99" LEVEL 1;
+COMP "BtnC" LOCATE = SITE "P46" LEVEL 1;
+COMP "BtnD" LOCATE = SITE "P55" LEVEL 1;
+COMP "BtnL" LOCATE = SITE "P47" LEVEL 1;
+COMP "BtnR" LOCATE = SITE "P48" LEVEL 1;
+COMP "BtnU" LOCATE = SITE "P51" LEVEL 1;
+COMP "vga_hsync" LOCATE = SITE "P16" LEVEL 1;
+COMP "vga_vsync" LOCATE = SITE "P17" LEVEL 1;
+COMP "vga_b0" LOCATE = SITE "P14" LEVEL 1;
+COMP "vga_b1" LOCATE = SITE "P15" LEVEL 1;
+COMP "vga_g0" LOCATE = SITE "P6" LEVEL 1;
+COMP "vga_g1" LOCATE = SITE "P8" LEVEL 1;
+COMP "vga_g2" LOCATE = SITE "P10" LEVEL 1;
+COMP "vga_r0" LOCATE = SITE "P5" LEVEL 1;
+COMP "vga_r1" LOCATE = SITE "P7" LEVEL 1;
+COMP "vga_r2" LOCATE = SITE "P9" LEVEL 1;
+PIN clk_gen_inst/clkout1_buf_pin<1> = BEL "clk_gen_inst/clkout1_buf" PINNAME
+        O;
+PIN "clk_gen_inst/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP clk_gen_inst_clkfx = BEL "DIV_CLK_0" BEL "DIV_CLK_1" BEL "DIV_CLK_2"
+        BEL "DIV_CLK_3" BEL "DIV_CLK_4" BEL "DIV_CLK_5" BEL "DIV_CLK_6" BEL
+        "DIV_CLK_7" BEL "DIV_CLK_8" BEL "DIV_CLK_9" BEL "DIV_CLK_10" BEL
+        "DIV_CLK_11" BEL "clock_buf" BEL "clk_gen_inst/clkout1_buf";
+PIN clk_gen_inst/dcm_sp_inst_pins<3> = BEL "clk_gen_inst/dcm_sp_inst" PINNAME
+        CLKIN;
+TIMEGRP sys_clk_pin = PIN "clk_gen_inst/dcm_sp_inst_pins<3>" BEL
+        "clk_gen_inst/clkin1_buf";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 ns HIGH 50%;
+TS_clk_gen_inst_clkfx = PERIOD TIMEGRP "clk_gen_inst_clkfx" TS_sys_clk_pin / 5
+        HIGH 50%;
+SCHEMATIC END;
+

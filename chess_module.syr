@@ -1,0 +1,966 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Reading design: chess_module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "chess_module.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "chess_module"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : chess_module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/clock_generator.v" into library work
+Parsing module <clock_generator>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/VGAsync_controller.vhd" into library work
+Parsing entity <VGAsync_controller>.
+Parsing architecture <Behavioral> of entity <vgasync_controller>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" into library work
+Parsing entity <chess_logic_module>.
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 10. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 11. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 18. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 19. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 22. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 26. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <Behavioral> of entity <chess_logic_module>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_display_controller.vhd" into library work
+Parsing entity <chess_display_controller>.
+Parsing architecture <Behavioral> of entity <chess_display_controller>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/button_debounce.vhd" into library work
+Parsing entity <button_debounce>.
+Parsing architecture <Behavioral> of entity <button_debounce>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" into library work
+Parsing entity <chess_module>.
+Parsing architecture <Behavioral> of entity <chess_module>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <chess_module> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 115: <bufg> remains a black-box since it has no binding entity.
+Going to verilog side to elaborate module clock_generator
+
+Elaborating module <clock_generator>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=1,CLKFX_MULTIPLY=5,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=50.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "/home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/clock_generator.v" Line 130: Assignment to status_int ignored, since the identifier is never used
+Back to vhdl to continue elaboration
+
+Elaborating entity <button_debounce> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 127: Formal port board_out_addr of mode buffer cannot be associated with actual port board_out_addr of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 10. board_out_addr is declared here
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 128: Formal port board_out_piece of mode buffer cannot be associated with actual port board_out_piece of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 11. board_out_piece is declared here
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 135: Formal port cursor_addr of mode buffer cannot be associated with actual port cursor_addr of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 18. cursor_addr is declared here
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 136: Formal port selected_addr of mode buffer cannot be associated with actual port selected_addr of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 19. selected_addr is declared here
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 139: Formal port move_is_legal of mode buffer cannot be associated with actual port move_is_legal of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 22. move_is_legal is declared here
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 143: Formal port promotion_piece of mode buffer cannot be associated with actual port promotion_piece of mode out
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 26. promotion_piece is declared here
+
+Elaborating entity <chess_logic_module> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 78: Using initial value false for path_horizontal_clear since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 79: Using initial value false for path_vertical_clear since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 80: Using initial value false for path_diagonal_clear since it is never assigned
+WARNING:HDLCompiler:321 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 220: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 230: Comparison between arrays of unequal length always returns FALSE.
+INFO:HDLCompiler:679 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 309. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:1127 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 122: Assignment to king_captured ignored, since the identifier is never used
+WARNING:HDLCompiler:321 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 402: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 420: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 425: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 483: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 484: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 485: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 490: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 491: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 492: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 493: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 501: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 502: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 503: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 508: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 509: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 510: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 511: board should be on the sensitivity list of the process
+WARNING:HDLCompiler:634 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 73: Net <h_delta[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 74: Net <v_delta[3]> does not have a driver.
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 10. board_out_addr is declared here
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 11. board_out_piece is declared here
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 18. cursor_addr is declared here
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 19. selected_addr is declared here
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 22. move_is_legal is declared here
+INFO:HDLCompiler:1408 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 26. promotion_piece is declared here
+
+Elaborating entity <chess_display_controller> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <VGAsync_controller> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" Line 316: reset should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <chess_module>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd".
+INFO:Xst:3210 - "/home/ise/Shared/VHDL_CHESS_Project/chess_module.vhd" line 194: Output port <LOCKED> of the instance <clk_gen_inst> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <BtnC_prev>.
+    Found 1-bit register for signal <BtnC_edge>.
+    Found 256-bit register for signal <board>.
+    Found 27-bit register for signal <DIV_CLK>.
+    Found 27-bit adder for signal <DIV_CLK[26]_GND_4_o_add_0_OUT> created at line 1241.
+    Found 8-bit adder for signal <n0300> created at line 322.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 285 D-type flip-flop(s).
+	inferred 256 Multiplexer(s).
+Unit <chess_module> synthesized.
+
+Synthesizing Unit <clock_generator>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/clock_generator.v".
+    Summary:
+	no macro.
+Unit <clock_generator> synthesized.
+
+Synthesizing Unit <button_debounce>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/button_debounce.vhd".
+    Found 1-bit register for signal <Btn_pulse>.
+    Found 3-bit register for signal <state>.
+    Found 14-bit register for signal <I>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | init                                           |
+    | Power Up State     | init                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 14-bit adder for signal <I[13]_GND_9_o_add_9_OUT> created at line 1241.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <button_debounce> synthesized.
+
+Synthesizing Unit <chess_logic_module>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd".
+WARNING:Xst:653 - Signal <h_delta> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <v_delta> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <player_to_move>.
+    Found 1-bit register for signal <board_change_enable>.
+    Found 6-bit register for signal <board_out_addr>.
+    Found 4-bit register for signal <board_out_piece>.
+    Found 2-bit register for signal <promotion_piece>.
+    Found 3-bit register for signal <current_state>.
+    Found 6-bit register for signal <cursor_addr_internal>.
+    Found 6-bit register for signal <selected_addr_internal>.
+INFO:Xst:1799 - State 110 is never reached in FSM <current_state>.
+INFO:Xst:1799 - State 111 is never reached in FSM <current_state>.
+    Found finite state machine <FSM_1> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 23                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <board_out_addr[5]_GND_10_o_add_75_OUT> created at line 1241.
+    Found 6-bit adder for signal <cursor_addr_internal[5]_GND_10_o_add_117_OUT> created at line 1241.
+    Found 6-bit adder for signal <cursor_addr_internal[5]_GND_10_o_add_121_OUT> created at line 1241.
+    Found 6-bit subtractor for signal <GND_10_o_GND_10_o_sub_116_OUT<5:0>> created at line 1308.
+    Found 6-bit subtractor for signal <GND_10_o_GND_10_o_sub_120_OUT<5:0>> created at line 1308.
+    Found 64x4-bit Read Only RAM for signal <board_out_addr[5]_GND_10_o_wide_mux_73_OUT>
+    Found 4-bit 64-to-1 multiplexer for signal <cursor_contents> created at line 118.
+    Found 4-bit 64-to-1 multiplexer for signal <selected_contents> created at line 119.
+    Found 3-bit comparator greater for signal <selected_addr_internal[2]_cursor_addr_internal[2]_LessThan_104_o> created at line 290
+    Found 4-bit comparator greater for signal <n0188> created at line 474
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  34 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <chess_logic_module> synthesized.
+
+Synthesizing Unit <chess_display_controller>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/chess_display_controller.vhd".
+    Found 8-bit register for signal <output_color>.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_69_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_71_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_73_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_75_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_77_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_79_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_81_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_82_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_99_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_101_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_103_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_105_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_107_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_109_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_111_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_112_OUT<6:0>> created at line 1308.
+    Found 1-bit 8-to-1 multiplexer for signal <art_x[2]_art_y[2]_Mux_177_o> created at line 375.
+    Found 8-bit 8-to-1 multiplexer for signal <counter_row[2]_GND_18_o_wide_mux_206_OUT> created at line 326.
+    Found 1-bit 64-to-1 multiplexer for signal <counter_row[2]_board_state[63][3]_wide_mux_202_OUT<3>> created at line 0.
+    Found 1-bit 64-to-1 multiplexer for signal <counter_row[2]_board_state[63][3]_wide_mux_168_OUT<2>> created at line 326.
+    Found 1-bit 64-to-1 multiplexer for signal <counter_row[2]_board_state[63][3]_wide_mux_168_OUT<1>> created at line 326.
+    Found 1-bit 64-to-1 multiplexer for signal <counter_row[2]_board_state[63][3]_wide_mux_168_OUT<0>> created at line 326.
+    Found 10-bit comparator lessequal for signal <n0067> created at line 179
+    Found 10-bit comparator lessequal for signal <n0070> created at line 182
+    Found 10-bit comparator lessequal for signal <n0073> created at line 185
+    Found 10-bit comparator lessequal for signal <n0076> created at line 188
+    Found 10-bit comparator lessequal for signal <n0079> created at line 191
+    Found 10-bit comparator lessequal for signal <n0082> created at line 194
+    Found 10-bit comparator lessequal for signal <n0085> created at line 197
+    Found 10-bit comparator lessequal for signal <n0103> created at line 211
+    Found 10-bit comparator lessequal for signal <n0106> created at line 214
+    Found 10-bit comparator lessequal for signal <n0109> created at line 217
+    Found 10-bit comparator lessequal for signal <n0112> created at line 220
+    Found 10-bit comparator lessequal for signal <n0115> created at line 223
+    Found 10-bit comparator lessequal for signal <n0118> created at line 226
+    Found 10-bit comparator lessequal for signal <n0121> created at line 229
+    Found 7-bit comparator lessequal for signal <n0139> created at line 241
+    Found 7-bit comparator lessequal for signal <n0141> created at line 243
+    Found 7-bit comparator lessequal for signal <n0143> created at line 245
+    Found 7-bit comparator lessequal for signal <n0145> created at line 247
+    Found 7-bit comparator lessequal for signal <n0147> created at line 249
+    Found 7-bit comparator lessequal for signal <n0149> created at line 251
+    Found 7-bit comparator lessequal for signal <n0151> created at line 253
+    Found 7-bit comparator lessequal for signal <n0160> created at line 263
+    Found 7-bit comparator lessequal for signal <n0162> created at line 265
+    Found 7-bit comparator lessequal for signal <n0164> created at line 267
+    Found 7-bit comparator lessequal for signal <n0166> created at line 269
+    Found 7-bit comparator lessequal for signal <n0168> created at line 271
+    Found 7-bit comparator lessequal for signal <n0170> created at line 273
+    Found 7-bit comparator lessequal for signal <n0172> created at line 275
+    Found 7-bit comparator lessequal for signal <n0181> created at line 283
+    Found 7-bit comparator lessequal for signal <n0183> created at line 283
+    Found 7-bit comparator lessequal for signal <n0186> created at line 284
+    Found 7-bit comparator lessequal for signal <n0189> created at line 284
+    Found 10-bit comparator lessequal for signal <n0192> created at line 286
+    Found 10-bit comparator greater for signal <CounterX[9]_PWR_12_o_LessThan_161_o> created at line 286
+    Found 10-bit comparator lessequal for signal <n0195> created at line 287
+    Found 10-bit comparator greater for signal <CounterY[9]_GND_18_o_LessThan_163_o> created at line 287
+    Found 6-bit comparator equal for signal <CURSOR_ADDR[5]_counter_row[2]_equal_164_o> created at line 301
+    Found 6-bit comparator equal for signal <SELECT_ADDR[5]_counter_row[2]_equal_165_o> created at line 303
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+	inferred  38 Comparator(s).
+	inferred 115 Multiplexer(s).
+Unit <chess_display_controller> synthesized.
+
+Synthesizing Unit <VGAsync_controller>.
+    Related source file is "/home/ise/Shared/VHDL_CHESS_Project/VGAsync_controller.vhd".
+    Found 10-bit register for signal <CounterY_int>.
+    Found 1-bit register for signal <vga_HS>.
+    Found 1-bit register for signal <vga_VS>.
+    Found 1-bit register for signal <inDisplayArea_int>.
+    Found 10-bit register for signal <CounterX_int>.
+    Found 10-bit adder for signal <CounterX_int[9]_GND_19_o_add_3_OUT> created at line 1241.
+    Found 10-bit adder for signal <CounterY_int[9]_GND_19_o_add_9_OUT> created at line 1241.
+    Found 10-bit comparator greater for signal <PWR_13_o_CounterX_int[9]_LessThan_15_o> created at line 77
+    Found 10-bit comparator greater for signal <CounterX_int[9]_PWR_13_o_LessThan_16_o> created at line 77
+    Found 10-bit comparator greater for signal <CounterX_int[9]_PWR_13_o_LessThan_19_o> created at line 99
+    Found 10-bit comparator greater for signal <CounterY_int[9]_GND_19_o_LessThan_20_o> created at line 99
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <VGAsync_controller> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x4-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 12
+ 10-bit adder                                          : 2
+ 14-bit adder                                          : 4
+ 27-bit adder                                          : 1
+ 6-bit adder                                           : 1
+ 6-bit addsub                                          : 1
+ 7-bit subtractor                                      : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 25
+ 1-bit register                                        : 11
+ 10-bit register                                       : 2
+ 14-bit register                                       : 4
+ 2-bit register                                        : 1
+ 256-bit register                                      : 1
+ 27-bit register                                       : 1
+ 4-bit register                                        : 1
+ 6-bit register                                        : 3
+ 8-bit register                                        : 1
+# Comparators                                          : 44
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 16
+ 3-bit comparator greater                              : 1
+ 4-bit comparator greater                              : 1
+ 6-bit comparator equal                                : 2
+ 7-bit comparator lessequal                            : 18
+# Multiplexers                                         : 431
+ 1-bit 2-to-1 multiplexer                              : 338
+ 1-bit 64-to-1 multiplexer                             : 4
+ 1-bit 8-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 2
+ 14-bit 2-to-1 multiplexer                             : 24
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 14
+ 4-bit 2-to-1 multiplexer                              : 4
+ 4-bit 64-to-1 multiplexer                             : 2
+ 6-bit 2-to-1 multiplexer                              : 15
+ 7-bit 2-to-1 multiplexer                              : 14
+ 8-bit 2-to-1 multiplexer                              : 9
+ 8-bit 8-to-1 multiplexer                              : 1
+# FSMs                                                 : 5
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <VGAsync_controller>.
+The following registers are absorbed into counter <CounterX_int>: 1 register on signal <CounterX_int>.
+The following registers are absorbed into counter <CounterY_int>: 1 register on signal <CounterY_int>.
+Unit <VGAsync_controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <chess_logic_module>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_board_out_addr[5]_GND_10_o_wide_mux_73_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <board_out_addr> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <chess_logic_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <chess_module>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+Unit <chess_module> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x4-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 9
+ 14-bit adder                                          : 4
+ 6-bit adder                                           : 1
+ 6-bit addsub                                          : 1
+ 7-bit subtractor                                      : 2
+ 8-bit adder                                           : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 27-bit up counter                                     : 1
+# Registers                                            : 355
+ Flip-Flops                                            : 355
+# Comparators                                          : 44
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 16
+ 3-bit comparator greater                              : 1
+ 4-bit comparator greater                              : 1
+ 6-bit comparator equal                                : 2
+ 7-bit comparator lessequal                            : 18
+# Multiplexers                                         : 429
+ 1-bit 2-to-1 multiplexer                              : 338
+ 1-bit 64-to-1 multiplexer                             : 4
+ 1-bit 8-to-1 multiplexer                              : 1
+ 14-bit 2-to-1 multiplexer                             : 24
+ 2-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 14
+ 4-bit 2-to-1 multiplexer                              : 4
+ 4-bit 64-to-1 multiplexer                             : 2
+ 6-bit 2-to-1 multiplexer                              : 15
+ 7-bit 2-to-1 multiplexer                              : 14
+ 8-bit 2-to-1 multiplexer                              : 9
+ 8-bit 8-to-1 multiplexer                              : 1
+# FSMs                                                 : 5
+# Xors                                                 : 3
+ 1-bit xor2                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <L_debounce_inst/FSM_0> on signal <state[1:3]> with user encoding.
+Optimizing FSM <U_debounce_inst/FSM_0> on signal <state[1:3]> with user encoding.
+Optimizing FSM <D_debounce_inst/FSM_0> on signal <state[1:3]> with user encoding.
+Optimizing FSM <R_debounce_inst/FSM_0> on signal <state[1:3]> with user encoding.
+---------------------
+ State   | Encoding
+---------------------
+ init    | 000
+ wq      | 001
+ scen_st | 010
+ ccr     | 011
+ wfcr    | 100
+---------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <logic_module/FSM_1> on signal <current_state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 010   | 010
+ 001   | 001
+ 011   | 011
+ 100   | 100
+ 110   | unreached
+ 111   | unreached
+-------------------
+WARNING:Xst:2677 - Node <DIV_CLK_12> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_13> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_14> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_15> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_16> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_17> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_18> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_19> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_20> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_21> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_22> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_23> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_24> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_25> of sequential type is unconnected in block <chess_module>.
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <chess_module>.
+
+Optimizing unit <chess_module> ...
+
+Optimizing unit <button_debounce> ...
+
+Optimizing unit <chess_logic_module> ...
+
+Optimizing unit <chess_display_controller> ...
+INFO:Xst:2261 - The FF/Latch <output_color_3> in Unit <chess_display_controller> is equivalent to the following FF/Latch, which will be removed : <output_color_4> 
+
+Optimizing unit <VGAsync_controller> ...
+WARNING:Xst:1710 - FF/Latch <R_debounce_inst/I_13> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_debounce_inst/I_12> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_debounce_inst/I_11> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <R_debounce_inst/I_10> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <D_debounce_inst/I_13> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <D_debounce_inst/I_12> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <D_debounce_inst/I_11> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <D_debounce_inst/I_10> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U_debounce_inst/I_13> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U_debounce_inst/I_12> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U_debounce_inst/I_11> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U_debounce_inst/I_10> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <L_debounce_inst/I_13> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <L_debounce_inst/I_12> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <L_debounce_inst/I_11> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <L_debounce_inst/I_10> (without init value) has a constant value of 0 in block <chess_module>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block chess_module, actual ratio is 19.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 385
+ Flip-Flops                                            : 385
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : chess_module.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1065
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 47
+#      LUT2                        : 28
+#      LUT3                        : 53
+#      LUT4                        : 34
+#      LUT5                        : 368
+#      LUT6                        : 356
+#      MUXCY                       : 75
+#      MUXF7                       : 11
+#      VCC                         : 1
+#      XORCY                       : 84
+# FlipFlops/Latches                : 385
+#      FD                          : 1
+#      FDC                         : 72
+#      FDCE                        : 274
+#      FDE                         : 6
+#      FDPE                        : 3
+#      FDR                         : 19
+#      FDRE                        : 10
+# Clock Buffers                    : 6
+#      BUFG                        : 6
+# IO Buffers                       : 26
+#      IBUF                        : 8
+#      IBUFG                       : 1
+#      OBUF                        : 17
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             385  out of  11440     3%  
+ Number of Slice LUTs:                  893  out of   5720    15%  
+    Number used as Logic:               893  out of   5720    15%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    931
+   Number with an unused Flip Flop:     546  out of    931    58%  
+   Number with an unused LUT:            38  out of    931     4%  
+   Number of fully used LUT-FF pairs:   347  out of    931    37%  
+   Number of unique control sets:        18
+
+IO Utilization: 
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    102    25%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                6  out of     16    37%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+DIV_CLK_11                         | BUFG                   | 343   |
+ClkPort                            | DCM_SP:CLKFX+BUFG      | 12    |
+DIV_CLK_1                          | BUFG                   | 30    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 11.896ns (Maximum Frequency: 84.060MHz)
+   Minimum input arrival time before clock: 4.513ns
+   Maximum output required time after clock: 9.103ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DIV_CLK_11'
+  Clock period: 9.486ns (frequency: 105.413MHz)
+  Total number of paths / destination ports: 35259 / 625
+-------------------------------------------------------------------------
+Delay:               9.486ns (Levels of Logic = 6)
+  Source:            logic_module/selected_addr_internal_1 (FF)
+  Destination:       logic_module/board_out_addr_5 (FF)
+  Source Clock:      DIV_CLK_11 rising
+  Destination Clock: DIV_CLK_11 rising
+
+  Data Path: logic_module/selected_addr_internal_1 to logic_module/board_out_addr_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             67   0.447   2.024  logic_module/selected_addr_internal_1 (logic_module/selected_addr_internal_1)
+     LUT6:I0->O            1   0.203   0.827  logic_module/Mmux_selected_contents_1214 (logic_module/Mmux_selected_contents_1214)
+     LUT6:I2->O            1   0.203   0.827  logic_module/Mmux_selected_contents_74 (logic_module/Mmux_selected_contents_74)
+     LUT6:I2->O            3   0.203   0.879  logic_module/selected_addr_internal<5>21 (logic_module/selected_contents<2>)
+     LUT3:I0->O            5   0.205   1.059  logic_module/_n0423<2>1 (Ld4_OBUF)
+     LUT6:I1->O            7   0.203   1.138  logic_module/GND_10_o_move_is_legal_AND_9_o1 (logic_module/GND_10_o_move_is_legal_AND_9_o)
+     LUT6:I0->O            6   0.203   0.744  logic_module/_n0488_inv1 (logic_module/_n0488_inv)
+     FDCE:CE                   0.322          logic_module/board_out_addr_0
+    ----------------------------------------
+    Total                      9.486ns (1.989ns logic, 7.497ns route)
+                                       (21.0% logic, 79.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 9.379ns (frequency: 106.618MHz)
+  Total number of paths / destination ports: 78 / 12
+-------------------------------------------------------------------------
+Delay:               1.876ns (Levels of Logic = 13)
+  Source:            DIV_CLK_0 (FF)
+  Destination:       DIV_CLK_11 (FF)
+  Source Clock:      ClkPort rising 5.0X
+  Destination Clock: ClkPort rising 5.0X
+
+  Data Path: DIV_CLK_0 to DIV_CLK_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.447   0.579  DIV_CLK_0 (DIV_CLK_0)
+     INV:I->O              1   0.206   0.000  Mcount_DIV_CLK_lut<0>_INV_0 (Mcount_DIV_CLK_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcount_DIV_CLK_cy<0> (Mcount_DIV_CLK_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<1> (Mcount_DIV_CLK_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<2> (Mcount_DIV_CLK_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<3> (Mcount_DIV_CLK_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<4> (Mcount_DIV_CLK_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<5> (Mcount_DIV_CLK_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<6> (Mcount_DIV_CLK_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<7> (Mcount_DIV_CLK_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<8> (Mcount_DIV_CLK_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<9> (Mcount_DIV_CLK_cy<9>)
+     MUXCY:CI->O           0   0.019   0.000  Mcount_DIV_CLK_cy<10> (Mcount_DIV_CLK_cy<10>)
+     XORCY:CI->O           1   0.180   0.000  Mcount_DIV_CLK_xor<11> (Result<11>)
+     FDC:D                     0.102          DIV_CLK_11
+    ----------------------------------------
+    Total                      1.876ns (1.297ns logic, 0.579ns route)
+                                       (69.1% logic, 30.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DIV_CLK_1'
+  Clock period: 11.896ns (frequency: 84.060MHz)
+  Total number of paths / destination ports: 954819 / 49
+-------------------------------------------------------------------------
+Delay:               11.896ns (Levels of Logic = 14)
+  Source:            display_interface/syncgen/CounterX_int_1 (FF)
+  Destination:       display_interface/output_color_6 (FF)
+  Source Clock:      DIV_CLK_1 rising
+  Destination Clock: DIV_CLK_1 rising
+
+  Data Path: display_interface/syncgen/CounterX_int_1 to display_interface/output_color_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.447   1.221  display_interface/syncgen/CounterX_int_1 (display_interface/syncgen/CounterX_int_1)
+     LUT6:I0->O            2   0.203   0.617  display_interface/CounterX[9]_GND_18_o_LessThan_76_o11 (display_interface/CounterX[9]_GND_18_o_LessThan_76_o1)
+     LUT5:I4->O            5   0.205   1.059  display_interface/CounterX[9]_GND_18_o_LessThan_76_o12 (display_interface/CounterX[9]_GND_18_o_LessThan_76_o)
+     LUT6:I1->O           67   0.203   1.660  display_interface/counter_col<1>1 (display_interface/counter_col<1>)
+     LUT2:I1->O            1   0.205   0.000  display_interface/Mmux_square_x_rs_lut<2> (display_interface/Mmux_square_x_rs_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  display_interface/Mmux_square_x_rs_cy<2> (display_interface/Mmux_square_x_rs_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  display_interface/Mmux_square_x_rs_cy<3> (display_interface/Mmux_square_x_rs_cy<3>)
+     XORCY:CI->O           9   0.180   1.194  display_interface/Mmux_square_x_rs_xor<4> (display_interface/square_x<4>)
+     LUT6:I0->O            1   0.203   0.000  display_interface/Mmux_art_x<0>1_F (N151)
+     MUXF7:I0->O           8   0.131   0.803  display_interface/Mmux_art_x<0>1 (display_interface/art_x<0>)
+     LUT4:I3->O            1   0.205   0.684  display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>11 (display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>11)
+     LUT6:I4->O            2   0.203   0.845  display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>14 (display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>14)
+     LUT5:I2->O            1   0.205   0.000  display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>22_G (N154)
+     MUXF7:I1->O           4   0.140   0.788  display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>22 (display_interface/counter_row[2]_GND_18_o_wide_mux_206_OUT<1>2)
+     LUT6:I4->O            1   0.203   0.000  display_interface/Mmux_counter_row[2]_PWR_12_o_mux_207_OUT21 (display_interface/counter_row[2]_PWR_12_o_mux_207_OUT<1>)
+     FDR:D                     0.102          display_interface/output_color_1
+    ----------------------------------------
+    Total                     11.896ns (3.026ns logic, 8.870ns route)
+                                       (25.4% logic, 74.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIV_CLK_11'
+  Total number of paths / destination ports: 437 / 397
+-------------------------------------------------------------------------
+Offset:              3.809ns (Levels of Logic = 3)
+  Source:            BtnR (PAD)
+  Destination:       R_debounce_inst/I_9 (FF)
+  Destination Clock: DIV_CLK_11 rising
+
+  Data Path: BtnR to R_debounce_inst/I_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   0.992  BtnR_IBUF (BtnR_IBUF)
+     LUT4:I0->O           10   0.203   1.085  R_debounce_inst/Mmux_state[2]_X_9_o_wide_mux_15_OUT161 (R_debounce_inst/Mmux_state[2]_X_9_o_wide_mux_15_OUT16)
+     LUT5:I2->O            1   0.205   0.000  R_debounce_inst/Mmux_state[2]_X_9_o_wide_mux_15_OUT91 (R_debounce_inst/state[2]_X_9_o_wide_mux_15_OUT<4>)
+     FDC:D                     0.102          R_debounce_inst/I_4
+    ----------------------------------------
+    Total                      3.809ns (1.732ns logic, 2.077ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              3.729ns (Levels of Logic = 1)
+  Source:            DIP8 (PAD)
+  Destination:       DIV_CLK_0 (FF)
+  Destination Clock: ClkPort rising 5.0X
+
+  Data Path: DIP8 to DIV_CLK_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           370   1.222   2.077  DIP8_IBUF (DIP8_IBUF)
+     FDC:CLR                   0.430          DIV_CLK_0
+    ----------------------------------------
+    Total                      3.729ns (1.652ns logic, 2.077ns route)
+                                       (44.3% logic, 55.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIV_CLK_1'
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Offset:              4.513ns (Levels of Logic = 2)
+  Source:            DIP8 (PAD)
+  Destination:       display_interface/syncgen/inDisplayArea_int (FF)
+  Destination Clock: DIV_CLK_1 rising
+
+  Data Path: DIP8 to display_interface/syncgen/inDisplayArea_int
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           370   1.222   2.078  DIP8_IBUF (DIP8_IBUF)
+     LUT4:I3->O            1   0.205   0.579  display_interface/syncgen/CounterX_int[9]_PWR_13_o_LessThan_19_o1 (display_interface/syncgen/CounterX_int[9]_PWR_13_o_LessThan_19_o_0)
+     FDR:R                     0.430          display_interface/syncgen/inDisplayArea_int
+    ----------------------------------------
+    Total                      4.513ns (1.857ns logic, 2.656ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DIV_CLK_1'
+  Total number of paths / destination ports: 18 / 10
+-------------------------------------------------------------------------
+Offset:              4.715ns (Levels of Logic = 2)
+  Source:            display_interface/syncgen/inDisplayArea_int (FF)
+  Destination:       vga_g0 (PAD)
+  Source Clock:      DIV_CLK_1 rising
+
+  Data Path: display_interface/syncgen/inDisplayArea_int to vga_g0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              7   0.447   0.878  display_interface/syncgen/inDisplayArea_int (display_interface/syncgen/inDisplayArea_int)
+     LUT2:I0->O            2   0.203   0.616  display_interface/G<2>1 (vga_g0_OBUF)
+     OBUF:I->O                 2.571          vga_g0_OBUF (vga_g0)
+    ----------------------------------------
+    Total                      4.715ns (3.221ns logic, 1.494ns route)
+                                       (68.3% logic, 31.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DIV_CLK_11'
+  Total number of paths / destination ports: 323 / 6
+-------------------------------------------------------------------------
+Offset:              9.103ns (Levels of Logic = 5)
+  Source:            logic_module/selected_addr_internal_1 (FF)
+  Destination:       Ld4 (PAD)
+  Source Clock:      DIV_CLK_11 rising
+
+  Data Path: logic_module/selected_addr_internal_1 to Ld4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             67   0.447   2.024  logic_module/selected_addr_internal_1 (logic_module/selected_addr_internal_1)
+     LUT6:I0->O            1   0.203   0.827  logic_module/Mmux_selected_contents_1214 (logic_module/Mmux_selected_contents_1214)
+     LUT6:I2->O            1   0.203   0.827  logic_module/Mmux_selected_contents_74 (logic_module/Mmux_selected_contents_74)
+     LUT6:I2->O            3   0.203   0.879  logic_module/selected_addr_internal<5>21 (logic_module/selected_contents<2>)
+     LUT3:I0->O            5   0.205   0.714  logic_module/_n0423<2>1 (Ld4_OBUF)
+     OBUF:I->O                 2.571          Ld4_OBUF (Ld4)
+    ----------------------------------------
+    Total                      9.103ns (3.832ns logic, 5.271ns route)
+                                       (42.1% logic, 57.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |    1.876|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DIV_CLK_1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DIV_CLK_1      |   11.896|         |         |         |
+DIV_CLK_11     |    7.310|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DIV_CLK_11
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DIV_CLK_11     |    9.486|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 3.97 secs
+ 
+--> 
+
+
+Total memory usage is 494808 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+
