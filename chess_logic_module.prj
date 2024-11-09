@@ -1,0 +1,2 @@
+vhdl work "path_check.vhd"
+vhdl work "chess_logic_module.vhd"

@@ -1,5 +1,6 @@
 verilog work "ipcore_dir/clock_generator.v"
 vhdl work "VGAsync_controller.vhd"
+vhdl work "path_check.vhd"
 vhdl work "chess_logic_module.vhd"
 vhdl work "chess_display_controller.vhd"
 vhdl work "button_debounce.vhd"

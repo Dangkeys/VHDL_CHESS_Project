@@ -1,8 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Nov 08 11:53:12 2024
+// Written by: Map P.20131013 on Sat Nov 09 04:33:42 2024
 //! **************************************************************************
 
 SCHEMATIC START;
+PIN clk_gen_inst/clkout1_buf_pin<1> = BEL "clk_gen_inst/clkout1_buf" PINNAME
+        O;
+PIN "clk_gen_inst/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
 COMP "Ld0" LOCATE = SITE "P82" LEVEL 1;
 COMP "Ld1" LOCATE = SITE "P81" LEVEL 1;
 COMP "Ld2" LOCATE = SITE "P80" LEVEL 1;
@@ -29,9 +32,6 @@ COMP "vga_g2" LOCATE = SITE "P10" LEVEL 1;
 COMP "vga_r0" LOCATE = SITE "P5" LEVEL 1;
 COMP "vga_r1" LOCATE = SITE "P7" LEVEL 1;
 COMP "vga_r2" LOCATE = SITE "P9" LEVEL 1;
-PIN clk_gen_inst/clkout1_buf_pin<1> = BEL "clk_gen_inst/clkout1_buf" PINNAME
-        O;
-PIN "clk_gen_inst/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
 TIMEGRP clk_gen_inst_clkfx = BEL "DIV_CLK_0" BEL "DIV_CLK_1" BEL "DIV_CLK_2"
         BEL "DIV_CLK_3" BEL "DIV_CLK_4" BEL "DIV_CLK_5" BEL "DIV_CLK_6" BEL
         "DIV_CLK_7" BEL "DIV_CLK_8" BEL "DIV_CLK_9" BEL "DIV_CLK_10" BEL

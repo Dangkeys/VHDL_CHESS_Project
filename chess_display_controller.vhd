@@ -308,21 +308,6 @@ begin
                         output_color <= RGB_LIGHT_SQ;
                     end if;
                 else
-
-                -- if in_square_border then
-                --     if std_logic_vector(counter_row & counter_col) = CURSOR_ADDR then
-                --         output_color <= RGB_CURSOR;
-                --     elsif std_logic_vector(counter_row & counter_col) = SELECT_ADDR and SELECT_EN = '1' then
-                --         output_color <= RGB_SELECTED;
-                --     elsif dark_square = '1' then
-                --         output_color <= RGB_DARK_SQ;
-                --     else
-                --         output_color <= RGB_LIGHT_SQ;
-                --     end if;
-                -- else
-
-                    -- Piece drawing logic
-
                     case board_state(to_integer(unsigned(counter_row & counter_col)))(2 downto 0) is
                         when PIECE_NONE =>
                             if dark_square = '1' then
@@ -330,31 +315,6 @@ begin
                             else
                                 output_color <= RGB_LIGHT_SQ;
                             end if;
-
-                    -- case board(to_integer(unsigned(counter_row & counter_col)))(2 downto 0) is
-                    --     when PIECE_NONE =>
-                    --         if dark_square = '1' then
-                    --             output_color <= RGB_DARK_SQ;
-                    --         else
-                    --             output_color <= RGB_LIGHT_SQ;
-                    --             end if;
-    
-                            -- when PIECE_PAWN =>
-                            --     piece_art := pawnArt(to_integer(art_y), to_integer(art_x));
-                            --     if piece_art = '1' then
-                            --         if board(to_integer(unsigned(counter_row & counter_col)))(3) = COLOR_BLACK then
-                            --             output_color <= RGB_BLACK_PIECE;
-                            --         else
-                            --             output_color <= RGB_WHITE_PIECE;
-                            --         end if;
-                            --     else
-                            --         if dark_square = '1' then
-                            --             output_color <= RGB_DARK_SQ;
-                            --         else
-                            --             output_color <= RGB_LIGHT_SQ;
-                            --         end if;
-                            --     end if;
-
                             when PIECE_PAWN =>
                                 piece_art := pawnArt(to_integer(art_y), to_integer(art_x));
                                 if piece_art = '1' then

@@ -75,9 +75,9 @@ architecture Behavioral of chess_logic_module is
     signal king_captured : STD_LOGIC;
     
     -- Add path clearance signals
-    signal path_horizontal_clear : boolean;
-    signal path_vertical_clear : boolean;
-    signal path_diagonal_clear : boolean;
+    signal path_horizontal_clear : std_logic;
+    signal path_vertical_clear : std_logic;
+    signal path_diagonal_clear : std_logic;
     
     -- Change rook movement flags to boolean type
     signal white_king_moved : boolean := false;
@@ -96,7 +96,19 @@ architecture Behavioral of chess_logic_module is
     -- Internal signals for addresses
     signal cursor_addr_internal : STD_LOGIC_VECTOR(5 downto 0);
     signal selected_addr_internal : STD_LOGIC_VECTOR(5 downto 0);
-
+    -- Add this in the architecture declaration section
+    component path_check is
+        port (
+            board           : in  STD_LOGIC_VECTOR(255 downto 0);
+            cursor_addr     : in  STD_LOGIC_VECTOR(5 downto 0);
+            selected_addr   : in  STD_LOGIC_VECTOR(5 downto 0);
+            h_delta         : in  STD_LOGIC_VECTOR(3 downto 0);
+            v_delta         : in  STD_LOGIC_VECTOR(3 downto 0);
+            horizontal_clear: out STD_LOGIC;
+            vertical_clear  : out STD_LOGIC;
+            diagonal_clear  : out STD_LOGIC
+        );
+end component;
 begin
     -- Connect internal signals to outputs
     state <= current_state;
@@ -105,6 +117,24 @@ begin
     selected_addr <= selected_addr_internal;
     is_in_initial_state <= '1' when current_state = INITIAL else '0';
     hilite_selected_square <= '1' when current_state = PIECE_MOVE else '0';
+
+-- Add this process in the chess_logic_module architecture before end Behavioral
+    delta_calc: process(cursor_addr_internal, selected_addr_internal)
+    begin
+        -- Calculate horizontal delta using concatenation with '0'
+        if unsigned(cursor_addr_internal(2 downto 0)) >= unsigned(selected_addr_internal(2 downto 0)) then
+            h_delta <= '0' & (unsigned(cursor_addr_internal(2 downto 0)) - unsigned(selected_addr_internal(2 downto 0)));
+        else
+            h_delta <= '0' & (unsigned(selected_addr_internal(2 downto 0)) - unsigned(cursor_addr_internal(2 downto 0)));
+        end if;
+
+        -- Calculate vertical delta using concatenation with '0'
+        if unsigned(cursor_addr_internal(5 downto 3)) >= unsigned(selected_addr_internal(5 downto 3)) then
+            v_delta <= '0' & (unsigned(cursor_addr_internal(5 downto 3)) - unsigned(selected_addr_internal(5 downto 3)));
+        else
+            v_delta <= '0' & (unsigned(selected_addr_internal(5 downto 3)) - unsigned(cursor_addr_internal(5 downto 3)));
+        end if;
+    end process;
 
     -- Board array assignment from input vector
     process(board_input)
@@ -191,25 +221,30 @@ begin
                         end if;
 
                     when PIECE_SEL =>
+                        board_change_enable <= '0';  -- Make sure no accidental writes
                         if BtnC = '1' and cursor_contents(3) = player_to_move and 
-                        cursor_contents(2 downto 0) /= PIECE_NONE then
+                            cursor_contents(2 downto 0) /= PIECE_NONE then
                             current_state <= PIECE_MOVE;
                             selected_addr_internal <= cursor_addr_internal;
-                        end if;
+                            -- Debug: Add LED or signal to show piece selection succeeded
+                    end if;
 
                     when PIECE_MOVE =>
+                        board_change_enable <= '0';  -- Make sure no accidental writes
                         if BtnC = '1' then
                             if cursor_contents(3) = player_to_move and 
-                                cursor_contents(2 downto 0) /= PIECE_NONE then
+                            cursor_contents(2 downto 0) /= PIECE_NONE then
+                                -- If selecting a new piece of same color
                                 selected_addr_internal <= cursor_addr_internal;
-
                             elsif move_is_legal = '1' and 
                                 (cursor_contents(2 downto 0) = PIECE_NONE or 
                                 cursor_contents(3) /= player_to_move) then
+                                -- If move is legal and destination is either empty or has enemy piece
                                 current_state <= WRITE_NEW_PIECE;
                                 board_out_addr <= cursor_addr_internal;
                                 board_out_piece <= selected_contents;
                                 board_change_enable <= '1';
+                                -- Debug: Add LED or signal to show move execution started
                             else
                                 current_state <= PIECE_SEL;
                             end if;
@@ -217,7 +252,7 @@ begin
 
                     when WRITE_NEW_PIECE =>
                         board_change_enable <= '1';
-                        if selected_contents = PIECE_KING and h_delta = 2 then
+                        if board_out_piece = (player_to_move & PIECE_KING) and h_delta = 2 then
                             -- Castling move
                             board_out_addr <= cursor_addr_internal;
                             board_out_piece <= selected_contents;
@@ -247,29 +282,29 @@ begin
                         end if;
 
                     when MOVE_ROOK =>
-                    board_change_enable <= '1';
-                    if player_to_move = COLOR_WHITE then
-                        if cursor_addr_internal(2 downto 0) > selected_addr_internal(2 downto 0) then
-                            -- Kingside
-                            board_out_addr <= "111101"; -- f1
-                            board_out_piece <= COLOR_WHITE & PIECE_ROOK;
+                        board_change_enable <= '1';
+                        if player_to_move = COLOR_WHITE then
+                            if cursor_addr_internal(2 downto 0) > selected_addr_internal(2 downto 0) then
+                                -- Kingside
+                                board_out_addr <= "111101"; -- f1
+                                board_out_piece <= COLOR_WHITE & PIECE_ROOK;
+                            else
+                                -- Queenside
+                                board_out_addr <= "111011"; -- d1
+                                board_out_piece <= COLOR_WHITE & PIECE_ROOK;
+                            end if;
                         else
-                            -- Queenside
-                            board_out_addr <= "111011"; -- d1
-                            board_out_piece <= COLOR_WHITE & PIECE_ROOK;
+                            if cursor_addr_internal(2 downto 0) > selected_addr_internal(2 downto 0) then
+                                -- Kingside
+                                board_out_addr <= "000101"; -- f8
+                                board_out_piece <= COLOR_BLACK & PIECE_ROOK;
+                            else
+                                -- Queenside
+                                board_out_addr <= "000011"; -- d8
+                                board_out_piece <= COLOR_BLACK & PIECE_ROOK;
+                            end if;
                         end if;
-                    else
-                        if cursor_addr_internal(2 downto 0) > selected_addr_internal(2 downto 0) then
-                            -- Kingside
-                            board_out_addr <= "000101"; -- f8
-                            board_out_piece <= COLOR_BLACK & PIECE_ROOK;
-                        else
-                            -- Queenside
-                            board_out_addr <= "000011"; -- d8
-                            board_out_piece <= COLOR_BLACK & PIECE_ROOK;
-                        end if;
-                    end if;
-                    current_state <= CLEAR_KING;
+                        current_state <= CLEAR_KING;
 
                     when CLEAR_KING =>
                         board_change_enable <= '1';
@@ -292,19 +327,19 @@ begin
                             else
                                 board_out_addr <= "000000"; -- a8
                             end if;
+
                         end if;
                         board_out_piece <= "0000"; -- Empty square
                         current_state <= PIECE_SEL;
                         player_to_move <= not player_to_move;
                         promotion_piece <= "00";
 
-                    when ERASE_OLD_PIECE =>
-                        current_state <= PIECE_SEL;
-                        board_change_enable <= '1';
-                        board_out_addr <= selected_addr_internal;
-                        board_out_piece <= "0000";
-                        player_to_move <= not player_to_move;
-                        promotion_piece <= "00";
+                        when ERASE_OLD_PIECE =>
+                            board_change_enable <= '1';
+                            board_out_addr <= selected_addr_internal;
+                            board_out_piece <= EMPTY_SQUARE;
+                            current_state <= PIECE_SEL;
+                            player_to_move <= not player_to_move;
 
                     when others =>
                         current_state <= INITIAL;
@@ -324,71 +359,25 @@ begin
         end if;
     end process;
 
-    -- -- Check path clearance
-    -- process(cursor_addr_internal, selected_addr_internal, board)
-    --     variable path_horizontal : boolean;
-    --     variable path_vertical : boolean;
-    --     variable path_diagonal : boolean;
-    --     variable idx : integer;
-    -- begin
-    --     path_horizontal := true;
-    --     path_vertical := true;
-    --     path_diagonal := true;
-
-    --     -- Check horizontal path
-    --     if v_delta = 0 and h_delta > 1 then
-    --         if unsigned(cursor_addr_internal(2 downto 0)) > unsigned(selected_addr_internal(2 downto 0)) then
-    --             -- Moving right
-    --             for i in 1 to to_integer(h_delta)-1 loop
-    --                 idx := to_integer(unsigned(selected_addr_internal)) + i;
-    --                 if board(idx) /= PIECE_NONE then
-    --                     path_horizontal := false;
-    --                 end if;
-    --             end loop;
-    --         else
-    --             -- Moving left
-    --             for i in 1 to to_integer(h_delta)-1 loop
-    --                 idx := to_integer(unsigned(selected_addr_internal)) - i;
-    --                 if board(idx) /= PIECE_NONE then
-    --                     path_horizontal := false;
-    --                 end if;
-    --             end loop;
-    --         end if;
-    --     end if;
-
-    --     -- Check vertical path
-    --     if h_delta = 0 and v_delta > 1 then
-    --         if unsigned(cursor_addr_internal(5 downto 3)) > unsigned(selected_addr_internal(5 downto 3)) then
-    --             -- Moving down
-    --             for i in 1 to to_integer(v_delta)-1 loop
-    --                 idx := to_integer(unsigned(selected_addr_internal)) + (i * 8);
-    --                 if board(idx) /= PIECE_NONE then
-    --                     path_vertical := false;
-    --                 end if;
-    --             end loop;
-    --         else
-    --             -- Moving up
-    --             for i in 1 to to_integer(v_delta)-1 loop
-    --                 idx := to_integer(unsigned(selected_addr_internal)) - (i * 8);
-    --                 if board(idx) /= PIECE_NONE then
-    --                     path_vertical := false;
-    --                 end if;
-    --             end loop;
-    --         end if;
-    --     end if;
-
-    --     -- Store results in signals for use in move_is_legal process
-    --     path_horizontal_clear <= path_horizontal;
-    --     path_vertical_clear <= path_vertical;
-    --     path_diagonal_clear <= path_diagonal;
-    -- end process;
+    path_checker: path_check
+    port map (
+        board => board_input,
+        cursor_addr => cursor_addr_internal,
+        selected_addr => selected_addr_internal,
+        h_delta => std_logic_vector(h_delta),
+        v_delta => std_logic_vector(v_delta),
+        horizontal_clear => path_horizontal_clear,
+        vertical_clear => path_vertical_clear,
+        diagonal_clear => path_diagonal_clear
+    );
 
         -- Move legality check process
     process(selected_contents, cursor_contents, h_delta, v_delta, 
-            path_horizontal_clear, path_vertical_clear, path_diagonal_clear,
-            player_to_move, cursor_addr_internal, selected_addr_internal,
-            white_king_moved, black_king_moved, white_rook_a_moved, 
-            white_rook_h_moved, black_rook_a_moved, black_rook_h_moved)
+        path_horizontal_clear, path_vertical_clear, path_diagonal_clear,
+        player_to_move, cursor_addr_internal, selected_addr_internal,
+        white_king_moved, black_king_moved, white_rook_a_moved, 
+        white_rook_h_moved, black_rook_a_moved, black_rook_h_moved,
+        board) 
         variable move_legal : std_logic;
     begin
         move_legal := '0';
@@ -396,53 +385,53 @@ begin
         case selected_contents(2 downto 0) is
             when PIECE_PAWN(2 downto 0) =>
                 if player_to_move = COLOR_WHITE then
-                    -- White pawn moves
+                    -- White pawn moves (moves upward, so decreasing row number)
                     if v_delta = 2 and h_delta = 0 and 
-                        selected_addr_internal(5 downto 3) = "110" and 
-                        cursor_contents = PIECE_NONE and
-                        board(to_integer(unsigned(selected_addr_internal) - 8))(2 downto 0) = PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) < unsigned(selected_addr_internal(5 downto 3)) then
+                    selected_addr_internal(5 downto 3) = "110" and -- Starting from rank 7 (second row)
+                    cursor_contents = EMPTY_SQUARE and
+                    board(to_integer(unsigned(selected_addr_internal) - 8))(2 downto 0) = PIECE_NONE and
+                    unsigned(cursor_addr_internal) = unsigned(selected_addr_internal) - 16 then -- Moving two squares up
                         move_legal := '1';  -- Initial two-square move
                     elsif v_delta = 1 and h_delta = 0 and
-                        cursor_contents(2 downto 0) = PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) < unsigned(selected_addr_internal(5 downto 3)) then
-                        move_legal := '1';
+                        cursor_contents = EMPTY_SQUARE and
+                        unsigned(cursor_addr_internal) = unsigned(selected_addr_internal) - 8 then -- Moving one square up
+                        move_legal := '1';  -- Single square move
                     elsif v_delta = 1 and h_delta = 1 and
                         cursor_contents(3) = COLOR_BLACK and
-                        cursor_contents /= PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) < unsigned(selected_addr_internal(5 downto 3)) then
+                        cursor_contents /= EMPTY_SQUARE and
+                        unsigned(cursor_addr_internal(5 downto 3)) = unsigned(selected_addr_internal(5 downto 3)) - 1 then
                         move_legal := '1';  -- Diagonal capture
                     end if;
                 else
-                    -- Black pawn moves
+                    -- Black pawn moves (moves downward, so increasing row number)
                     if v_delta = 2 and h_delta = 0 and 
-                        selected_addr_internal(5 downto 3) = "001" and 
-                        cursor_contents = PIECE_NONE and
-                        board(to_integer(unsigned(selected_addr_internal) + 8))(2 downto 0) = PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) > unsigned(selected_addr_internal(5 downto 3)) then
+                    selected_addr_internal(5 downto 3) = "001" and -- Starting from rank 2
+                    cursor_contents = EMPTY_SQUARE and
+                    board(to_integer(unsigned(selected_addr_internal) + 8))(2 downto 0) = PIECE_NONE and
+                    unsigned(cursor_addr_internal) = unsigned(selected_addr_internal) + 16 then -- Moving two squares down
                         move_legal := '1';  -- Initial two-square move
                     elsif v_delta = 1 and h_delta = 0 and
-                        cursor_contents = PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) > unsigned(selected_addr_internal(5 downto 3)) then
-                        move_legal := '1';  -- Single square forward
+                        cursor_contents = EMPTY_SQUARE and
+                        unsigned(cursor_addr_internal) = unsigned(selected_addr_internal) + 8 then -- Moving one square down
+                        move_legal := '1';  -- Single square move
                     elsif v_delta = 1 and h_delta = 1 and
                         cursor_contents(3) = COLOR_WHITE and
-                        cursor_contents /= PIECE_NONE and
-                        unsigned(cursor_addr_internal(5 downto 3)) > unsigned(selected_addr_internal(5 downto 3)) then
+                        cursor_contents /= EMPTY_SQUARE and
+                        unsigned(cursor_addr_internal(5 downto 3)) = unsigned(selected_addr_internal(5 downto 3)) + 1 then
                         move_legal := '1';  -- Diagonal capture
                     end if;
                 end if;
 
             when PIECE_ROOK =>
                 -- Rook moves horizontally or vertically
-                if (h_delta = 0 and path_vertical_clear) or 
-                    (v_delta = 0 and path_horizontal_clear) then
+                if (h_delta = 0 and path_vertical_clear = '1') or 
+                    (v_delta = 0 and path_horizontal_clear = '1' ) then
                     move_legal := '1';
                 end if;
             
             when PIECE_BISHOP =>
                 -- Bishop moves diagonally
-                if h_delta = v_delta and path_diagonal_clear then
+                if h_delta = v_delta and path_diagonal_clear = '1' then
                     move_legal := '1';
                 end if;
 
@@ -456,15 +445,15 @@ begin
             when PIECE_QUEEN =>
                 -- Queen moves like rook or bishop
                 if h_delta = 0 then
-                    if path_vertical_clear then
+                    if path_vertical_clear = '1' then
                         move_legal := '1';
                     end if;
                 elsif v_delta = 0 then
-                    if path_horizontal_clear then
+                    if path_horizontal_clear = '1' then
                         move_legal := '1';
                     end if;
                 elsif h_delta = v_delta then
-                    if path_diagonal_clear then
+                    if path_diagonal_clear = '1' then
                         move_legal := '1';
                     end if;
                 end if;
