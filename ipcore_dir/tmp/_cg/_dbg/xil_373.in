@@ -9,10 +9,10 @@ SET_PREFERENCE verilogsim true
 SET_PREFERENCE vhdlsim false
 SET_PREFERENCE simulationfiles Behavioral
 SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
-SET_PREFERENCE outputdirectory /home/ise/Shared/verilog_chess/ipcore_dir/
-SET_PREFERENCE workingdirectory /home/ise/Shared/verilog_chess/ipcore_dir/tmp/
-SET_PREFERENCE subworkingdirectory /home/ise/Shared/verilog_chess/ipcore_dir/tmp/_cg/
-SET_PREFERENCE transientdirectory /home/ise/Shared/verilog_chess/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE outputdirectory /home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/
+SET_PREFERENCE workingdirectory /home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory /home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory /home/ise/Shared/VHDL_CHESS_Project/ipcore_dir/tmp/_cg/_dbg/
 SET_PREFERENCE designentry Verilog
 SET_PREFERENCE flowvendor Other
 SET_PREFERENCE addpads false
