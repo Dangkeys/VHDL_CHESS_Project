@@ -69,8 +69,8 @@ architecture Behavioral of chess_module is
     signal debounce_clk : STD_LOGIC;
     
     -- Button signals
-    signal BtnC_prev : STD_LOGIC;
-    signal BtnC_edge : STD_LOGIC;
+    -- signal BtnC_prev : STD_LOGIC;
+    -- signal BtnC_edge : STD_LOGIC;
     signal BtnC_pulse : STD_LOGIC;
     signal BtnU_pulse : STD_LOGIC;
     signal BtnR_pulse : STD_LOGIC;
@@ -214,16 +214,16 @@ begin
     debounce_clk <= std_logic(DIV_CLK(11));    -- 24.4 kHz
 
     -- Button edge detection process
-    process(debounce_clk, Reset)
-    begin
-        if Reset = '1' then
-            BtnC_prev <= '0';
-            BtnC_edge <= '0';
-        elsif rising_edge(debounce_clk) then
-            BtnC_prev <= BtnC;
-            BtnC_edge <= BtnC and (not BtnC_prev);
-        end if;
-    end process;
+    -- process(debounce_clk, Reset)
+    -- begin
+    --     if Reset = '1' then
+    --         BtnC_prev <= '0';
+    --         BtnC_edge <= '0';
+    --     elsif rising_edge(debounce_clk) then
+    --         BtnC_prev <= BtnC;
+    --         BtnC_edge <= BtnC and (not BtnC_prev);
+    --     end if;
+    -- end process;
 
     -- Button debouncer instantiations
     L_debounce_inst: button_debounce
@@ -258,7 +258,15 @@ begin
             Btn_pulse => BtnD_pulse
         );
 
-    BtnC_pulse <= BtnC_edge;
+    C_debounce_inst: button_debounce
+        port map (
+            CLK => debounce_clk,
+            RESET => Reset,
+            Btn => BtnC,
+            Btn_pulse => BtnC_pulse
+        );
+
+    -- BtnC_pulse <= BtnC_edge;
 
     -- Game logic module instantiation
     logic_module: chess_logic_module

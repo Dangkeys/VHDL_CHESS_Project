@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-11-09T03:45:06</DateModified>
+  <DateModified>2024-11-09T18:58:02</DateModified>
   <ModuleName>chess_module</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-11-09T18:08:30</SummaryTimeStamp>
   <SavedFilePath>/home/ise/Shared/VHDL_CHESS_Project/iseconfig/chess_module.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/Shared/VHDL_CHESS_Project/</ImplementationReportsDirectory>
   <DateInitialized>2024-11-08T07:49:07</DateInitialized>

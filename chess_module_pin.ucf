@@ -4,16 +4,18 @@ NET "ClkPort" TNM_NET = sys_clk_pin;
 TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50 ns;  # 20MHz period
 
 # Add switch mappings
-NET "Sw0" LOC = P66 | IOSTANDARD = LVCMOS33;      # SW0 for promotion LSB
-NET "Sw1" LOC = P62 | IOSTANDARD = LVCMOS33;      # SW1 for promotion MSB
+NET "Sw0" LOC = P2 | IOSTANDARD = LVCMOS33;      # SW0 for promotion LSB
+NET "Sw1" LOC = P143 | IOSTANDARD = LVCMOS33;      # SW1 for promotion MSB
 NET "DIP8" LOC = P99 | IOSTANDARD = LVCMOS33;     # DIP8 for reset
 
 # Push Buttons with original mapping
-NET "BtnL" LOC = P47 | IOSTANDARD = LVCMOS33 | PULLUP; # PB3
-NET "BtnR" LOC = P48 | IOSTANDARD = LVCMOS33 | PULLUP;  # PB4
-NET "BtnU" LOC = P51;  # PB5
-NET "BtnD" LOC = P55;  # PB6
-NET "BtnC" LOC = P46;  # PB1
+# NET "BtnL" LOC = P134 | IOSTANDARD = LVCMOS33 | PULLUP; # PB3
+# NET "BtnR" LOC = P138 | IOSTANDARD = LVCMOS33 | PULLUP;  # PB4
+NET "BtnL" LOC = P134; # PB3
+NET "BtnR" LOC = P138;  # PB4
+NET "BtnU" LOC = P140;  # PB5
+NET "BtnD" LOC = P142;  # PB6
+NET "BtnC" LOC = P1;  # PB1
 # LEDs
 NET "Ld0" LOC = P82 | IOSTANDARD = LVCMOS33;      # L0
 NET "Ld1" LOC = P81 | IOSTANDARD = LVCMOS33;      # L1
