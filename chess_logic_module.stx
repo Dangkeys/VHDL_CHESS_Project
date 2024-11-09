@@ -5,14 +5,14 @@ Parameter TMPDIR set to /home/ise/Shared/VHDL_CHESS_Project/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Parameter xsthdpdir set to /home/ise/Shared/VHDL_CHESS_Project/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Reading design: chess_logic_module.prj
@@ -42,35 +42,50 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" into library work
-Parsing entity <path_check>.
-Parsing architecture <Behavioral> of entity <path_check>.
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 39: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 40: Syntax error near "generate".
-ERROR:HDLCompiler:1690 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 41: This construct is only supported in VHDL 1076-2008
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 44: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 46: Syntax error near "generate".
-ERROR:HDLCompiler:1690 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 47: This construct is only supported in VHDL 1076-2008
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 50: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 61: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 62: Syntax error near "generate".
-ERROR:HDLCompiler:1690 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 63: This construct is only supported in VHDL 1076-2008
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 66: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 68: Syntax error near "generate".
-ERROR:HDLCompiler:1690 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 69: This construct is only supported in VHDL 1076-2008
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 72: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 83: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 84: Syntax error near "generate".
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 85: Syntax error near "generate".
-ERROR:HDLCompiler:1690 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 86: This construct is only supported in VHDL 1076-2008
-ERROR:HDLCompiler:806 - "/home/ise/Shared/VHDL_CHESS_Project/path_check.vhd" Line 89: Syntax error near "generate".
-Sorry, too many errors..
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_types.vhd" into library work
+Parsing package <chess_logic_types>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/move_validator.vhd" into library work
+Parsing entity <move_validator>.
+Parsing architecture <Behavioral> of entity <move_validator>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/cursor_controller.vhd" into library work
+Parsing entity <cursor_controller>.
+Parsing architecture <Behavioral> of entity <cursor_controller>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_state_machine.vhd" into library work
+Parsing entity <chess_state_machine>.
+Parsing architecture <Behavioral> of entity <chess_state_machine>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/castling_controller.vhd" into library work
+Parsing entity <castling_controller>.
+Parsing architecture <Behavioral> of entity <castling_controller>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/board_manager.vhd" into library work
+Parsing entity <board_manager>.
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/board_manager.vhd" Line 17. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/board_manager.vhd" Line 18. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <Behavioral> of entity <board_manager>.
+Parsing VHDL file "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" into library work
+Parsing entity <chess_logic_module>.
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 10. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 11. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 12. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 18. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 19. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 22. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 26. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <Behavioral> of entity <chess_logic_module>.
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 140. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 141. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 193: Formal port cursor_pos of mode out cannot be associated with actual port cursor_addr of mode buffer
+WARNING:HDLCompiler:439 - "/home/ise/Shared/VHDL_CHESS_Project/chess_logic_module.vhd" Line 209: Formal port move_is_legal of mode out cannot be associated with actual port move_is_legal of mode buffer
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 1.91 secs
+ 
 --> 
 
 
-Total memory usage is 398252 kilobytes
+Total memory usage is 398276 kilobytes
 
-Number of errors   :   19 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

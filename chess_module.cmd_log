@@ -97,3 +97,63 @@ ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pi
 map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
 par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
 bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+xst -intstyle ise -ifn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.xst" -ofn "/home/ise/Shared/VHDL_CHESS_Project/chess_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc chess_module_pin.ucf -p xc6slx9-tqg144-3 chess_module.ngc chess_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o chess_module_map.ncd chess_module.ngd chess_module.pcf 
+par -w -intstyle ise -ol high -mt off chess_module_map.ncd chess_module.ncd chess_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml chess_module.twx chess_module.ncd -o chess_module.twr chess_module.pcf -ucf chess_module_pin.ucf 
+bitgen -intstyle ise -f chess_module.ut chess_module.ncd 

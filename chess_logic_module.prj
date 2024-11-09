@@ -1,2 +1,7 @@
-vhdl work "path_check.vhd"
+vhdl work "chess_logic_types.vhd"
+vhdl work "move_validator.vhd"
+vhdl work "cursor_controller.vhd"
+vhdl work "chess_state_machine.vhd"
+vhdl work "castling_controller.vhd"
+vhdl work "board_manager.vhd"
 vhdl work "chess_logic_module.vhd"
