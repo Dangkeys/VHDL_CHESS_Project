@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 09 08:41:07 2024
+// Written by: Map P.20131013 on Sat Nov 09 19:11:31 2024
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -14,11 +14,11 @@ COMP "Sw0" LOCATE = SITE "P66" LEVEL 1;
 COMP "Sw1" LOCATE = SITE "P62" LEVEL 1;
 COMP "ClkPort" LOCATE = SITE "P123" LEVEL 1;
 COMP "DIP8" LOCATE = SITE "P99" LEVEL 1;
-COMP "BtnC" LOCATE = SITE "P46" LEVEL 1;
-COMP "BtnD" LOCATE = SITE "P55" LEVEL 1;
-COMP "BtnL" LOCATE = SITE "P47" LEVEL 1;
-COMP "BtnR" LOCATE = SITE "P48" LEVEL 1;
-COMP "BtnU" LOCATE = SITE "P51" LEVEL 1;
+COMP "BtnC" LOCATE = SITE "P134" LEVEL 1;
+COMP "BtnD" LOCATE = SITE "P138" LEVEL 1;
+COMP "BtnL" LOCATE = SITE "P1" LEVEL 1;
+COMP "BtnR" LOCATE = SITE "P142" LEVEL 1;
+COMP "BtnU" LOCATE = SITE "P140" LEVEL 1;
 COMP "vga_hsync" LOCATE = SITE "P16" LEVEL 1;
 COMP "vga_vsync" LOCATE = SITE "P17" LEVEL 1;
 COMP "vga_b0" LOCATE = SITE "P14" LEVEL 1;

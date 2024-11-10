@@ -11,40 +11,40 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sat Nov  9 08:41:01 2024
+Mapped Date    : Sat Nov  9 19:11:25 2024
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    1
 Slice Logic Utilization:
-  Number of Slice Registers:                   413 out of  11,440    3%
-    Number used as Flip Flops:                 413
+  Number of Slice Registers:                   421 out of  11,440    3%
+    Number used as Flip Flops:                 421
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,748 out of   5,720   30%
-    Number used as logic:                    1,743 out of   5,720   30%
-      Number using O6 output only:           1,582
-      Number using O5 output only:              58
-      Number using O5 and O6:                  103
+  Number of Slice LUTs:                      1,625 out of   5,720   28%
+    Number used as logic:                    1,619 out of   5,720   28%
+      Number using O6 output only:           1,451
+      Number using O5 output only:              70
+      Number using O5 and O6:                   98
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:      5
+    Number used exclusively as route-thrus:      6
       Number with same-slice register load:      0
-      Number with same-slice carry load:         5
+      Number with same-slice carry load:         6
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   608 out of   1,430   42%
-  Number of MUXCYs used:                       116 out of   2,860    4%
-  Number of LUT Flip Flop pairs used:        1,753
-    Number with an unused Flip Flop:         1,347 out of   1,753   76%
-    Number with an unused LUT:                   5 out of   1,753    1%
-    Number of fully used LUT-FF pairs:         401 out of   1,753   22%
-    Number of unique control sets:              25
+  Number of occupied Slices:                   607 out of   1,430   42%
+  Number of MUXCYs used:                       132 out of   2,860    4%
+  Number of LUT Flip Flop pairs used:        1,627
+    Number with an unused Flip Flop:         1,214 out of   1,627   74%
+    Number with an unused LUT:                   2 out of   1,627    1%
+    Number of fully used LUT-FF pairs:         411 out of   1,627   25%
+    Number of unique control sets:              17
     Number of slice register sites lost
-      to control set restrictions:             131 out of  11,440    1%
+      to control set restrictions:              99 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -83,11 +83,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                5.31
+Average Fanout of Non-Clock Nets:                5.32
 
-Peak Memory Usage:  772 MB
+Peak Memory Usage:  771 MB
 Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   6 secs 
+Total CPU time to MAP completion:   5 secs 
 
 Table of Contents
 -----------------
@@ -130,11 +130,6 @@ WARNING:Place:1137 - This design is not guaranteed to be routable! This design
 Section 3 - Informational
 -------------------------
 INFO:Security:54 - 'xc6slx9' is a WebPack part.
-INFO:LIT:243 - Logical network Sw0_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 1 more times for the following
-   (max. 5 shown):
-   Sw1_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -174,8 +169,8 @@ Section 6 - IOB Properties
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | BtnC                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | BtnD                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| BtnL                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
-| BtnR                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
+| BtnL                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| BtnR                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | BtnU                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | ClkPort                            | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | DIP8                               | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |

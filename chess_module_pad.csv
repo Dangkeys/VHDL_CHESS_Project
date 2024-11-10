@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (lin64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Sat Nov  9 08:41:15 2024
+#Sat Nov  9 19:11:38 2024
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -19,7 +19,7 @@
 # 
 # -----,-----,-----,-----,-----,-----,-----,-----,-----,-----,-----,-----,-----,-----,-----,
 Pin Number,Signal Name,Pin Usage,Pin Name,Direction,IO Standard,IO Bank Number,Drive (mA),Slew Rate,Termination,IOB Delay,Voltage,Constraint,IO Register,Signal Integrity,
-P1,,IOBS,IO_L83N_VREF_3,UNUSED,,3,,,,,,,,,
+P1,BtnL,IOB,IO_L83N_VREF_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
 P2,,IOBM,IO_L83P_3,UNUSED,,3,,,,,,,,,
 P3,,,GND,,,,,,,,,,,,
 P4,,,VCCO_3,,,3,,,,,3.30,,,,
@@ -64,16 +64,16 @@ P42,,,VCCO_2,,,2,,,,,3.30,,,,
 P43,,IOBS,IO_L62N_D6_2,UNUSED,,2,,,,,,,,,
 P44,,IOBM,IO_L62P_D5_2,UNUSED,,2,,,,,,,,,
 P45,,IOBS,IO_L49N_D4_2,UNUSED,,2,,,,,,,,,
-P46,BtnC,IOB,IO_L49P_D3_2,INPUT,LVCMOS25*,2,,,,NONE,,LOCATED,NO,NONE,
-P47,BtnL,IOB,IO_L48N_RDWR_B_VREF_2,INPUT,LVCMOS33,2,,,PULLUP,NONE,,LOCATED,NO,NONE,
-P48,BtnR,IOB,IO_L48P_D7_2,INPUT,LVCMOS33,2,,,PULLUP,NONE,,LOCATED,NO,NONE,
+P46,,IOBM,IO_L49P_D3_2,UNUSED,,2,,,,,,,,,
+P47,,IOBS,IO_L48N_RDWR_B_VREF_2,UNUSED,,2,,,,,,,,,
+P48,,IOBM,IO_L48P_D7_2,UNUSED,,2,,,,,,,,,
 P49,,,GND,,,,,,,,,,,,
 P50,,IOBS,IO_L31N_GCLK30_D15_2,UNUSED,,2,,,,,,,,,
-P51,BtnU,IOB,IO_L31P_GCLK31_D14_2,INPUT,LVCMOS25*,2,,,,NONE,,LOCATED,NO,NONE,
+P51,,IOBM,IO_L31P_GCLK31_D14_2,UNUSED,,2,,,,,,,,,
 P52,,,VCCINT,,,,,,,,1.2,,,,
 P53,,,VCCAUX,,,,,,,,2.5,,,,
 P54,,,GND,,,,,,,,,,,,
-P55,BtnD,IOB,IO_L30N_GCLK0_USERCCLK_2,INPUT,LVCMOS25*,2,,,,NONE,,LOCATED,NO,NONE,
+P55,,IOBS,IO_L30N_GCLK0_USERCCLK_2,UNUSED,,2,,,,,,,,,
 P56,,IOBM,IO_L30P_GCLK1_D13_2,UNUSED,,2,,,,,,,,,
 P57,,IOBS,IO_L14N_D12_2,UNUSED,,2,,,,,,,,,
 P58,,IOBM,IO_L14P_D11_2,UNUSED,,2,,,,,,,,,
@@ -152,15 +152,15 @@ P130,,,GND,,,,,,,,,,,,
 P131,,IOBS,IO_L35N_GCLK16_0,UNUSED,,0,,,,,,,,,
 P132,,IOBM,IO_L35P_GCLK17_0,UNUSED,,0,,,,,,,,,
 P133,,IOBS,IO_L34N_GCLK18_0,UNUSED,,0,,,,,,,,,
-P134,,IOBM,IO_L34P_GCLK19_0,UNUSED,,0,,,,,,,,,
+P134,BtnC,IOB,IO_L34P_GCLK19_0,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
 P135,,,VCCO_0,,,0,,,,,any******,,,,
 P136,,,GND,,,,,,,,,,,,
 P137,,IOBS,IO_L4N_0,UNUSED,,0,,,,,,,,,
-P138,,IOBM,IO_L4P_0,UNUSED,,0,,,,,,,,,
+P138,BtnD,IOB,IO_L4P_0,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
 P139,,IOBS,IO_L3N_0,UNUSED,,0,,,,,,,,,
-P140,,IOBM,IO_L3P_0,UNUSED,,0,,,,,,,,,
+P140,BtnU,IOB,IO_L3P_0,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
 P141,,IOBS,IO_L2N_0,UNUSED,,0,,,,,,,,,
-P142,,IOBM,IO_L2P_0,UNUSED,,0,,,,,,,,,
+P142,BtnR,IOB,IO_L2P_0,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
 P143,,IOBS,IO_L1N_VREF_0,UNUSED,,0,,,,,,,,,
 P144,,IOBM,IO_L1P_HSWAPEN_0,UNUSED,,0,,,,,,,,,
 
